@@ -4,21 +4,17 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   <title>video playlist</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="css/style.css">
 
-
-
-
-   <!-- styling starts from here -->
-
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+   <!--styling starts here-->
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 
 :root{
    --main-color:Blue;
@@ -1394,10 +1390,9 @@ section{
    }
 
 }
+   </style>
 
-</style>
-
-<!-- styling ends here -->
+<!-- styeling ends here  -->
 
 </head>
 <body>
@@ -1406,41 +1401,28 @@ section{
    
    <section class="flex">
 
-      <a href="home.html" class="logo">Study Buddy</a>
+      <a href="home.html" class="logo">Educa.</a>
 
-      <form method="post" class="search-form" action="/search">
-         <input type="text" name="search_box" required placeholder="Search course name" maxlength="100">
-         <button  type="submit" class="fas fa-search"></button>
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
       </form>
 
       <div class="icons">
          <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="search-btn" class="fas fa-search">
-            
-         </div>
+         <div id="search-btn" class="fas fa-search"></div>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="toggle-btn" class="fas fa-sun"></div>
       </div>
 
       <div class="profile">
-         <img src="/public/image/pic-1.jpg" class="image" alt="">
-         <% if (user) { %>
-            <h3 class="name"><%=user.username%></h3>
-            <p class="role"><%=user.role%></p>
-         
-         <% if (user.role==='admin') { %>
-            <a href="/admin" class="btn">View Admin Dashboard</a>
-         <% } else { %>
-            <a href="profile.html" class="btn">view profile</a>
-            <%}%>
-            <% } %>
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">shaikh anas</h3>
+         <p class="role">studen</p>
+         <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
-            <% if (user) { %>
-               <a href="/student/logout" class="option-btn">LogOut</a>
-            <% } else { %>
-               <a href="/registration" class="option-btn">login</a>
-               <a href="/registration" class="option-btn">register</a>
-            <% } %>
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
          </div>
       </div>
 
@@ -1448,87 +1430,105 @@ section{
 
 </header>   
 
-   <div class="side-bar">
+<div class="side-bar">
 
-      <div id="close-btn">
-         <i class="fas fa-times"></i>
-      </div>
-      <% if (user) { %>
-      <div class="profile">
-         <img src="/public/image/pic-1.jpg" class="image" alt="">
-         <h3 class="name"><%=user.username%></h3>
-         <p class="role"><%=user.role%></p>  
-         <a href="profile.html" class="btn">view profile</a>
-      </div>
-      <% } else{%>
-         <div class="profile">
-            <img src="/public/image/unknownuser.png" class="image" alt="">
-            <h3 class="name">Unknown User</h3>
-            <p class="role">?</p>  
-            <a href="profile.html" class="btn">view profile</a>
-         </div>
-         <%}%>
-      <nav class="navbar">
-         <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
-         <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
-         <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-         <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
-         <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
-         <a href="/test"><i class="fas fa-graduation-cap"></i><span>Test your skills</span></a>
-      </nav>
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="">
+      <h3 class="name">shaikh anas</h3>
+      <p class="role">studen</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+
+   <h1 class="heading">playlist details</h1>
+
+   <div class="row">
+
+      <div class="column">
+         <form action="" method="post" class="save-playlist">
+            <button type="submit"><i class="far fa-bookmark"></i> <span>save playlist</span></button>
+         </form>
    
+         <div class="thumb">
+            <img src="images/thumb-1.png" alt="">
+            <span>10 videos</span>
+         </div>
+      </div>
+      <div class="column">
+         <div class="tutor">
+            <img src="images/pic-2.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+   
+         <div class="details">
+            <h3>complete HTML tutorial</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum minus reiciendis, error sunt veritatis exercitationem deserunt velit doloribus itaque voluptate.</p>
+            <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         </div>
+      </div>
    </div>
 
+</section>
 
+<section class="playlist-videos">
 
-
-<section class="home-grid">
-
-   <h1 class="heading">quick options</h1>
+   <h1 class="heading">playlist videos</h1>
 
    <div class="box-container">
 
-      <div class="box">
-         <h3 class="title">likes and comments</h3>
-         <p class="likes">total likes : <span>25</span></p>
-         <a href="#" class="inline-btn">view likes</a>
-         <p class="likes">total comments : <span>12</span></p>
-         <a href="#" class="inline-btn">view comments</a>
-         <p class="likes">saved playlists : <span>4</span></p>
-         <a href="#" class="inline-btn">view playlists</a>
-      </div>
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-1.png" alt="">
+         <h3>complete HTML tutorial (part 01)</h3>
+      </a>
 
-      <div class="box">
-         <h3 class="title">top categories</h3>
-         <div class="flex">
-            <a href="#"><i class="fas fa-code"></i><span>development</span></a>
-            <a href="#"><i class="fas fa-chart-simple"></i><span>business</span></a>
-            <a href="#"><i class="fas fa-pen"></i><span>design</span></a>
-            <a href="#"><i class="fas fa-chart-line"></i><span>marketing</span></a>
-            <a href="#"><i class="fas fa-music"></i><span>music</span></a>
-            <a href="#"><i class="fas fa-camera"></i><span>photography</span></a>
-            <a href="#"><i class="fas fa-cog"></i><span>software</span></a>
-            <a href="#"><i class="fas fa-vial"></i><span>science</span></a>
-         </div>
-      </div>
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-2.png" alt="">
+         <h3>complete HTML tutorial (part 02)</h3>
+      </a>
 
-      <div class="box">
-         <h3 class="title">popular topics</h3>
-         <div class="flex">
-            <a href="#"><i class="fab fa-html5"></i><span>HTML</span></a>
-            <a href="#"><i class="fab fa-css3"></i><span>CSS</span></a>
-            <a href="#"><i class="fab fa-js"></i><span>javascript</span></a>
-            <a href="#"><i class="fab fa-react"></i><span>react</span></a>
-            <a href="#"><i class="fab fa-php"></i><span>PHP</span></a>
-            <a href="#"><i class="fab fa-bootstrap"></i><span>bootstrap</span></a>
-         </div>
-      </div>
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-3.png" alt="">
+         <h3>complete HTML tutorial (part 03)</h3>
+      </a>
 
-      <div class="box">
-         <h3 class="title">become a tutor</h3>
-         <p class="tutor">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, nam?</p>
-         <a href="teachers.html" class="inline-btn">get started</a>
-      </div>
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-4.png" alt="">
+         <h3>complete HTML tutorial (part 04)</h3>
+      </a>
+
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-5.png" alt="">
+         <h3>complete HTML tutorial (part 05)</h3>
+      </a>
+
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="images/post-1-6.png" alt="">
+         <h3>complete HTML tutorial (part 06)</h3>
+      </a>
 
    </div>
 
@@ -1536,51 +1536,23 @@ section{
 
 
 
-<section class="courses">
-
-   <h1 class="heading">our courses</h1>
-
-   <div class="box-container">
-
-      <% var i=1;allVideos.forEach(video => { %>
-         <div class="box">
-            <div class="tutor">
-               <img src="/public/images/pic-2.jpg" alt="">
-               <div class="info">
-                  <h3>john deo</h3>
-                  <span>21-10-2022</span>
-               </div>
-            </div>
-            <div class="thumb">
-               <img src="<%=video.videoImageUrl%>" alt="">
-               <span>10 videos</span>
-            </div>
-            <h3 class="title"><%=video.videoTitle%></h3>
-            <a href="/playlist/video._id" class="inline-btn">view playlist</a>
-         </div>
-      <% }) %>
-    
 
 
-   <div class="more-btn">
-      <a href="courses.html" class="inline-option-btn">view all courses</a>
-   </div>
 
-</section>
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!
+
+</footer>
 
 <!-- custom js file link  -->
-<% if (err) { %>
-   <script>
-      document.addEventListener('DOMContentLoaded', function() {
-         var msg = "<%= err %>";
-         if (msg) {
-             alert(msg);
-         }
-         });
-   </script>
-<% } %>
-
-
 <script>
    let toggleBtn = document.getElementById('toggle-btn');
 let body = document.body;
@@ -1647,8 +1619,6 @@ window.onscroll = () =>{
    }
 }
 </script>
-
-
 
    
 </body>

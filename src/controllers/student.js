@@ -22,13 +22,25 @@ async function userLogin(req,res){
 }
 
 async function userSignUp(req,res){
+    const adminDomain='@studybuddy';
     const {username,email,password,role}=req.body;
-    await User.create({
-        username,
-        email,
-        password,
-        role,
-    })
+
+    
+    if(role==='admin' && !username.endsWith(adminDomain)){
+        console.log("you are not allowed to register as admin");
+        const err="you r not allowed to register as admin!!!"
+        return res.render("registration",{"err":"you are not allowed to register as admin registeration FAILED"});
+    }
+
+    else{
+        await User.create({
+            username,
+            email,
+            password,
+            role,
+        })
+
+    }
     return res.redirect("/registration"); 
 
 }
